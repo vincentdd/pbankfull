@@ -13,6 +13,10 @@ export class User {
     @prop()
     password: string
 
+    @ApiProperty({ description: '删除标记', example: 1 })
+    @prop()
+    status: boolean
+
     @prop()
     privateKey: string
 }

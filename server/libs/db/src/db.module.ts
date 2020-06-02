@@ -2,13 +2,12 @@ import { Module, Global } from '@nestjs/common';
 import { DbService } from './db.service';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { User } from './models/user.model';
+import { Bill } from './models/bill.model';
 
-const models = TypegooseModule.forFeature([{
-  typegooseClass: User,
-  schemaOptions: {
-    collection: "User"
-  }
-}]);
+const models = TypegooseModule.forFeature([
+  { typegooseClass: User, schemaOptions: { collection: "User" } },
+  { typegooseClass: Bill, schemaOptions: { collection: "Bill" } }
+]);
 
 @Global()
 @Module({
